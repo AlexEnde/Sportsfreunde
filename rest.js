@@ -5,8 +5,14 @@ function REST_ROUTER(router,connection,md5) {
 
 REST_ROUTER.prototype.handleRoutes= function(router,connection,md5) {
     router.get("/",function(req,res){
-        res.json({"Message" : "Hello World !"});
-    })
+		connection.query('SELECT * from user LIMIT 2', function(err, rows, fields) {
+			connection.end();
+			if (!err)
+				console.log('The solution is: ', rows);
+			else
+				console.log('Error while performing Query.');
+		});
+	});
 }
 
 module.exports = REST_ROUTER;
