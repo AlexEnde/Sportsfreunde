@@ -1,7 +1,7 @@
 var express = require("express");
 var mysql   = require("mysql");
 var bodyParser  = require("body-parser");
-var md5 = require('MD5');
+var md5 = require('md5');
 var rest = require("./REST.js");
 var app  = express();
 
